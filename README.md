@@ -89,3 +89,38 @@ import * as flsFunctions from './modules' // './modules/index.js'
 ```
 
 По любым вопросам касающихся сборки пишите мне в [Telegram](https://t.me/StarkElessar).
+
+.
+├─ /dist
+│   ├─ /css
+│   ├─ /images
+│   ├─ /js
+│   ├─ index.html
+│   └─ order.html
+├─ /src
+│   ├─ /components
+│   │   ├─ /header
+│   │   │   ├─ header.html
+│   │   │   └─ header.scss
+│   │   ├─ /offer
+│   │   │   ├─ offer.html
+│   │   │   ├─ offer.js
+│   │   │   └─ offer.scss
+│   │   ├─ /order
+│   │   │   ├─ order.html
+│   │   │   ├─ order.js
+│   │   │   ├─ order.scss
+│   │   └─ /footer
+│   │       ├─ footer.html
+│   │       ├─ footer.js
+│   │       └─ footer.scss
+│   ├─ /fonts
+│   ├─ /images
+│   ├─ /js
+│   │   └─ main.js
+│   ├─ index.html
+│   │─ order.html
+│   └─ /styles
+│       └─ style.scss
+├─ gulpfile.js
+└─ package.json
