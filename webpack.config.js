@@ -1,5 +1,5 @@
 import { resolve, join } from 'path';
-import { readDir } from './gulp/config/read-dir.js';
+import { readdirSync } from 'fs'; // Используем readdirSync для синхронного чтения директории
 
 export const webpackConfig = async (isMode) => {
   const paths = {
@@ -7,15 +7,23 @@ export const webpackConfig = async (isMode) => {
     build: resolve('dist'),
   };
 
-	const context = join(paths.src, 'js');
+  // Получаем список страниц (файлов .js) в папке src/js/pages
+  const pagesDir = resolve(paths.src, 'js', 'pages');
+  const pages = readdirSync(pagesDir);
+
+  // Создаем точки входа для каждой страницы
+  const entry = {};
+  pages.forEach(page => {
+    const pageName = page.replace('.js', ''); // Имя страницы без расширения .js
+    entry[pageName] = resolve(pagesDir, page); // Полный путь к файлу
+  });
 
   return {
-    context,
-    entry: await readDir(context),
+    entry,
     mode: isMode ? 'development' : 'production',
     output: {
-      path: join(paths.build, 'js'),
-      filename: '[name].min.js',
+      path: resolve(paths.build, 'js'),
+      filename: '[name].min.js', // Имя файла будет соответствовать имени точки входа
       publicPath: '/',
     },
     module: {
@@ -37,3 +45,4 @@ export const webpackConfig = async (isMode) => {
     },
   };
 };
+;
