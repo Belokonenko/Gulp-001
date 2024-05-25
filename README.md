@@ -59,8 +59,9 @@
 - с 18.08.2023 есть поддержка шрифтов с такими названиями например: "`Inter-Regular[ |-|_|__][I|i]talic`" 
 - - такие названия Gulp правильно обработает и запишет в стили `font-style: normal/italic`;
 - 
-- Конвертация шрифтов происходит в папке `src/fonts` от туда шрифты с рассширением `.woff2` 
-- переносятся в `dist/fonts`. Если файл для подключения шрифтов уже создан - 
+- Конвертация шрифтов происходит в папке `src/fonts` 
+- от туда шрифты с рассширением `.woff2` переносятся в `dist/fonts`. 
+- Если файл для подключения шрифтов уже создан - 
 - gulp просто перенесет шрифты `*.woff2` в `dist/fonts` без лишней трудозатратной конвертации.
 
 ## Что делает WebPack?
@@ -87,6 +88,9 @@ import * as flsFunctions from './modules' // './modules/index.js'
 ```json
 "homepage": "https://{UserName}.github.io/{NameRepo}",
 ```
+"homepage": "https://github.com/Belokonenko/Gulp-001",
+
+скопировал в браузере в адрес
 
 По любым вопросам касающихся сборки пишите мне в [Telegram](https://t.me/StarkElessar).
 
@@ -115,12 +119,19 @@ import * as flsFunctions from './modules' // './modules/index.js'
 │   │       ├─ footer.js
 │   │       └─ footer.scss
 │   ├─ /fonts
-│   ├─ /images
+│   ├─ /images/Svg/
+│   ├─ /icons(code svg for svgsprite)(not transferred)
 │   ├─ /js
-│   │   └─ main.js
+│   │   └─ pages
+│   │       └─index.js
+│   │       └─order.js
 │   ├─ index.html
 │   │─ order.html
-│   └─ /styles
-│       └─ style.scss
+│   └─ /scss
+│       └─config/
+│       │   └─ base.scss
+│       │   └─ fonts.scss
+│       └─libs/ 
+│       └─ main.scss
 ├─ gulpfile.js
 └─ package.json

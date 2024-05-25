@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/StarkElessar/gulp-2022/issues"
   },
-"homepage": "https://Belokonenko.github.io/Gulp-001",
+"homepage": "https://github.com/Belokonenko/Gulp-001",
   "devDependencies": {
     "@babel/core": "^7.22.10",
     "@babel/preset-env": "^7.19.1",
